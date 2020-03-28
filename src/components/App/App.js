@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "../Header/Header";
 import "./App.scss";
 
 function App() {
   return (
     <div className="app">
-      <h1>Evde kal, güvende kal Türkiye.</h1>
+      <Header />
     </div>
   );
 }
