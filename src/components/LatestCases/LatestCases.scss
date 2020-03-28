@@ -1,0 +1,64 @@
+.latest-cases {
+  margin-top: 3rem;
+  width: 100%;
+
+  .case-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .case {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    text-align: center;
+  }
+  .case-wrapper {
+    background-color: #fff;
+    border: solid 1px #eceef4;
+    border-top: solid 3px #eceef4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(#000, 0.02);
+    display: block;
+    height: 100%;
+    padding: 2.25rem 1.5rem 2rem;
+    position: relative;
+    transition: box-shadow ease 0.3s;
+
+    &:hover {
+      box-shadow: 0 10px 40px 0 rgba(#000, 0.08);
+    }
+  }
+  .case-title {
+    display: block;
+    color: #122544;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    > small {
+      color: green;
+    }
+  }
+  .case-value {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .total-case .case-wrapper {
+    border-top-color: #4d6cff;
+  }
+  .total-recovered .case-wrapper {
+    border-top-color: #01b681;
+  }
+  .total-death .case-wrapper {
+    border-top-color: #ef7943;
+  }
+  .active-case .case-wrapper {
+    border-top-color: #fecc65;
+  }
+}

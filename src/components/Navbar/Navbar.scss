@@ -24,6 +24,7 @@
         display: block;
         font-weight: 700;
         padding: 0.5rem;
+        text-transform: uppercase;
 
         &:hover {
           color: #cf142b;
@@ -31,7 +32,7 @@
       }
     }
     > li + li {
-      margin-left: 1rem;
+      margin-left: 0.75rem;
     }
   }
 }

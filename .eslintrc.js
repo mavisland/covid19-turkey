@@ -1,23 +1,36 @@
 module.exports = {
+  extends: ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  plugins: ["react", "prettier"],
   env: {
     browser: true,
+    commonjs: true,
     es6: true,
-    node: true
+    jest: true,
+    node: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 2018,
-    sourceType: "module"
-  },
-  plugins: ["prettier"],
   rules: {
-    "prettier/prettier": "error"
-  }
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        extensions: [".js", "jsx"],
+      },
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        components: ["Link"],
+        specialLink: ["hrefLeft", "hrefRight"],
+        aspects: ["noHref", "invalidHref", "preferButton"],
+      },
+    ],
+    "jsx-a11y/href-no-hash": ["off"],
+    "no-console": [
+      1,
+      {
+        allow: ["warn", "error"],
+      },
+    ],
+    "max-len": ["error", { code: 120 }],
+  },
 };

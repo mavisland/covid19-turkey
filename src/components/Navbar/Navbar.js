@@ -9,19 +9,19 @@ function Navbar() {
       </a>
       <ul className="menu">
         <li>
-          <a href="#">Son Durum</a>
+          <a href="#sonDurum">Son Durum</a>
         </li>
         <li>
-          <a href="#">Haberler</a>
+          <a href="#haberler">Haberler</a>
         </li>
         <li>
-          <a href="#">Önlemler</a>
+          <a href="#onlemler">Önlemler</a>
         </li>
         <li>
-          <a href="#">Belirtiler</a>
+          <a href="#belirtiler">Belirtiler</a>
         </li>
         <li>
-          <a href="#">Tüm Dünya</a>
+          <a href="#dunya">Tüm Dünya</a>
         </li>
       </ul>
     </div>
