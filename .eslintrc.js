@@ -21,8 +21,7 @@ module.exports = {
       "error",
       {
         components: ["Link"],
-        specialLink: ["hrefLeft", "hrefRight"],
-        aspects: ["noHref", "invalidHref", "preferButton"],
+        specialLink: ["to"],
       },
     ],
     "jsx-a11y/href-no-hash": ["off"],
@@ -34,5 +33,12 @@ module.exports = {
     ],
     "max-len": ["error", { code: 120 }],
     "no-else-return": "off",
+  },
+  settings: {
+    "import/resolver": {
+      node: {
+        paths: ["src"],
+      },
+    },
   },
 };
