@@ -1,6 +1,7 @@
 module.exports = {
   extends: ["airbnb", "plugin:prettier/recommended", "prettier/react"],
   plugins: ["react", "prettier"],
+  parser: "babel-eslint",
   env: {
     browser: true,
     commonjs: true,
@@ -32,5 +33,6 @@ module.exports = {
       },
     ],
     "max-len": ["error", { code: 120 }],
+    "no-else-return": "off",
   },
 };
