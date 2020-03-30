@@ -1,18 +1,17 @@
 // covid19-turkey Styles
 // -------------------------
 
+// Variables
+@import "abstracts/variables";
+
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Inter:400,600,700,900&display=swap&subset=latin-ext");
 
-// Variables
-@import "abstracts/variables";
-
 // Base Styles
 @import "base/generic";
-@import "base/container";
 
 // Components
 @import "components/app";

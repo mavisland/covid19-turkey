@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Container, Row, Col } from "reactstrap";
 
 const useFetch = () => {
   const [data, setData] = useState(null);
@@ -39,42 +40,54 @@ function LatestCases() {
 
   return (
     <div className="latest-cases">
-      {loading ? (
-        <div>Yükleniyor...</div>
-      ) : (
-        <div className="container">
-          <div className="case-row" id={data[0].id}>
-            <div className="case total-case">
-              <div className="case-wrapper">
-                <span className="case-title">
-                  {data[0].total_cases} <small>(+{data[0].new_cases})</small>
-                </span>
-                <span className="case-value">Toplam Vaka Sayısı</span>
-              </div>
-            </div>
-            <div className="case active-case">
-              <div className="case-wrapper">
-                <span className="case-title">{data[0].active_cases}</span>
-                <span className="case-value">Aktif Vaka Sayısı</span>
-              </div>
-            </div>
-            <div className="case total-death">
-              <div className="case-wrapper">
-                <span className="case-title">
-                  {data[0].total_deaths} <small>(+{data[0].new_deaths})</small>
-                </span>
-                <span className="case-value">Toplam Ölüm Sayısı</span>
-              </div>
-            </div>
-            <div className="case total-recovered">
-              <div className="case-wrapper">
-                <span className="case-title">{data[0].total_recovered}</span>
-                <span className="case-value">İyileşen Sayısı</span>
-              </div>
+      <Container>
+        {loading ? (
+          <div className="case active-case">
+            <div className="case-wrapper">
+              <span className="case-title">Yükleniyor...</span>
             </div>
           </div>
-        </div>
-      )}
+        ) : (
+          <Row>
+            <Col md="6" lg="3">
+              <div className="case total-case">
+                <div className="case-wrapper">
+                  <span className="case-title">
+                    {data[0].total_cases} <small>(+{data[0].new_cases})</small>
+                  </span>
+                  <span className="case-value">Toplam Vaka Sayısı</span>
+                </div>
+              </div>
+            </Col>
+            <Col md="6" lg="3">
+              <div className="case active-case">
+                <div className="case-wrapper">
+                  <span className="case-title">{data[0].active_cases}</span>
+                  <span className="case-value">Aktif Vaka Sayısı</span>
+                </div>
+              </div>
+            </Col>
+            <Col md="6" lg="3">
+              <div className="case total-death">
+                <div className="case-wrapper">
+                  <span className="case-title">
+                    {data[0].total_deaths} <small>(+{data[0].new_deaths})</small>
+                  </span>
+                  <span className="case-value">Toplam Ölüm Sayısı</span>
+                </div>
+              </div>
+            </Col>
+            <Col md="6" lg="3">
+              <div className="case total-recovered">
+                <div className="case-wrapper">
+                  <span className="case-title">{data[0].total_recovered}</span>
+                  <span className="case-value">İyileşen Sayısı</span>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        )}
+      </Container>
     </div>
   );
 }

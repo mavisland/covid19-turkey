@@ -1,29 +1,8 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background-color: $body-bg-color;
-  color: $body-text-color;
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  margin: 0;
-}
-
 a {
-  color: $link-color;
-  text-decoration: none;
   transition: all 0.15s ease-in;
-
-  &:hover {
-    color: $link-hover-color;
-  }
 }

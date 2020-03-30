@@ -9,12 +9,9 @@ import Belirtiler from "../pages/Belirtiler";
 import Dunya from "../pages/Dunya";
 import SayfaBulunamadi from "../pages/SayfaBulunamadi";
 
-// import LatestCases from "./LatestCases";
-// import CaseCharts from "./CaseCharts";
-
 function App() {
   return (
-    <main className="app">
+    <div>
       <Header />
       <Switch>
         <Route exact path="/">
@@ -36,7 +33,7 @@ function App() {
           <SayfaBulunamadi />
         </Route>
       </Switch>
-    </main>
+    </div>
   );
 }
 

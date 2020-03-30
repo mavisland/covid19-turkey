@@ -1,43 +1,50 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Container, Collapse, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem } from "reactstrap";
+import { NavLink as RouterLink } from "react-router-dom";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <div className="header">
-      <div className="container">
-        <div className="navbar">
-          <Link to="/" exact className="logo">
+      <Container>
+        <Navbar light expand="md">
+          <NavbarBrand href="/" className="text-primary">
             Evde Kal Türkiye
-          </Link>
-          <ul className="menu">
-            <li>
-              <NavLink exact activeClassName="active" to="/">
-                Son Durum
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active" to="/haberler">
-                Haberler
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active" to="/onlemler">
-                Önlemler
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active" to="/belirtiler">
-                Belirtiler
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active" to="/dunya">
-                Tüm Dünya
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </div>
+          </NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <RouterLink exact className="nav-link" activeClassName="active" to="/">
+                  Son Durum
+                </RouterLink>
+              </NavItem>
+              <NavItem>
+                <RouterLink className="nav-link" activeClassName="active" to="/haberler">
+                  Haberler
+                </RouterLink>
+              </NavItem>
+              <NavItem>
+                <RouterLink className="nav-link" activeClassName="active" to="/onlemler">
+                  Önlemler
+                </RouterLink>
+              </NavItem>
+              <NavItem>
+                <RouterLink className="nav-link" activeClassName="active" to="/belirtiler">
+                  Belirtiler
+                </RouterLink>
+              </NavItem>
+              <NavItem>
+                <RouterLink className="nav-link" activeClassName="active" to="/dunya">
+                  Tüm Dünya
+                </RouterLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </Container>
     </div>
   );
 }

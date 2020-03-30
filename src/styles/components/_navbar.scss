@@ -1,38 +1,28 @@
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .logo {
-    display: block;
+// Navbar
+.navbar-light {
+  // Navbar
+  .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0;
+    text-transform: uppercase;
   }
-  .menu {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding-left: 0;
+  .navbar-nav {
+    // Navbar Link
+    .nav-link {
+      color: #383838;
+      font-weight: 600;
+      text-transform: uppercase;
 
-    > li {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-
-      > a {
-        color: #383838;
-        display: block;
-        font-weight: 700;
-        padding: 0.5rem;
-        text-transform: uppercase;
-
-        &:hover {
+      &:hover {
+        color: #cf142b;
+      }
+      &.active {
+        &,
+        &:hover,
+        &:focus {
           color: #cf142b;
         }
       }
-    }
-    > li + li {
-      margin-left: 0.75rem;
     }
   }
 }

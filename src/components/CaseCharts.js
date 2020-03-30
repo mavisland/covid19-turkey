@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+
 import axios from "axios";
 import Chart from "react-apexcharts";
+
+import { Container, Row, Col } from "reactstrap";
 
 class CaseCharts extends Component {
   constructor(props) {
@@ -94,19 +97,40 @@ class CaseCharts extends Component {
     const { error, isLoaded, chartOptions, chartSeriesCases, chartSeriesDeaths } = this.state;
 
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return (
+        <Container>
+          <div className="case total-death">
+            <div className="case-wrapper">
+              <span className="case-title">Hata oluştu...</span>
+              <span className="case-value">{error.message}</span>
+            </div>
+          </div>
+        </Container>
+      );
     }
 
     if (!isLoaded) {
-      return <div>Yükleniyor...</div>;
+      return (
+        <Container>
+          <div className="case active-case">
+            <div className="case-wrapper">
+              <span className="case-title">Yükleniyor...</span>
+            </div>
+          </div>
+        </Container>
+      );
     } else {
       return (
-        <div>
-          <div className="mixed-chart">
-            <Chart type="area" options={chartOptions} series={chartSeriesCases} />
-            <Chart type="area" options={chartOptions} series={chartSeriesDeaths} />
-          </div>
-        </div>
+        <Container>
+          <Row>
+            <Col md="6">
+              <Chart type="area" options={chartOptions} series={chartSeriesCases} />
+            </Col>
+            <Col md="6">
+              <Chart type="area" options={chartOptions} series={chartSeriesDeaths} />
+            </Col>
+          </Row>
+        </Container>
       );
     }
   }
