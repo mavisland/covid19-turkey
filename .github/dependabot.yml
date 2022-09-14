@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "12:00"
+      timezone: "Europe/Istanbul"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "mavisland"
+    labels:
+      - "dependencies"
